@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ScheduleManager.iml" filepath="$PROJECT_DIR$/ScheduleManager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ScheduleManager.iml" filepath="$PROJECT_DIR$/.idea/modules/ScheduleManager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ScheduleManager.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ScheduleManager.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ScheduleManager.test.iml" filepath="$PROJECT_DIR$/.idea/modules/ScheduleManager.test.iml" />
     </modules>
   </component>
 </project>
