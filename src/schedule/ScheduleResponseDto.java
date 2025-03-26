@@ -8,6 +8,7 @@ public class ScheduleResponseDto
     private String name;
     private String todo;
     private String date;
+    private String updated_at;
 
     public ScheduleResponseDto(Schedule schedule)
     {
@@ -19,9 +20,9 @@ public class ScheduleResponseDto
 
     public ScheduleResponseDto(Long id,String name,String todo,String date)
     {
-        this.id=id;
-        this.name=name;
-        this.todo=todo;
-        this.date=date;
+        this.id = id;
+        this.name = name;
+        this.todo = todo;
+        this.updated_at = date;
     }
 }

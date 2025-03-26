@@ -1,4 +1,6 @@
 package schedule;
+import java.util.List;
+import org.springframework.web.bind.annotation.RestController;
 
 //사용자가 요청한 데이터를 받아서 Service에 전달
 //Service에서 처리된 데이터를 사용자에게 반환
