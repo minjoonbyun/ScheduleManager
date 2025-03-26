@@ -11,11 +11,13 @@
     <output-test url="file://$MODULE_DIR$/../../build/classes/java/test" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../src/test" />
+    <content url="file://$MODULE_DIR$/../../src/test" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="ScheduleManager.main" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-web:3.2.0" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-data-jdbc:3.2.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.projectlombok:lombok:1.18.30" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-test:3.2.0" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-json:3.2.0" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter:3.2.0" level="project" />
