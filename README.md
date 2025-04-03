@@ -13,10 +13,10 @@
 
 |기능|메소드|URL|Request|Response|
 |------|---|---|---|------|
-|유저 생성 (회원가입)|POST|/api/users|{<br/>"username":"변민준",<br/>"email":"bms0615@naver.com",<br/>"password":"1234"<br/>}|{<br/>"id":1,<br/>"username":"변민준",<br/>"email":"bms0615@naver.com",<br/>"createdAt":"2025-03-24 12:00:00",<br/>"updatedAt":"2025-03-24 12:00:00"<br/>}|
-|유저 조회 (단건)|GET|/api/users/{id}| |{<br/>"id":1,<br/>"username":"변민준",<br/>"email":"bms0615@naver.com",<br/>"createdAt":"2025-03-24 12:00:00",<br/>"updatedAt":"2025-03-24 12:00:00"<br/>}|
-|유저 목록 조회|GET|/api/users| |[{<br/>"id":1,<br/>"username":"변민준",<br/>"email":"bms0615@naver.com",<br/>"createdAt":"2025-03-24 12:00:00",<br/>"updatedAt":"2025-03-24 12:00:00"<br/>},<br/>{<br/>"id":2,<br/>"username":"홍길동",<br/>"email":"hong@example.com",<br/>"createdAt":"2025-03-24 12:10:00",<br/>"updatedAt":"2025-03-24 12:10:00"<br/>}]|
-|유저 정보 수정|PUT|/api/users/{id}|{<br/>"username":"변민준 수정",<br/>"email":"bms0615@naver.com",<br/>"password":"5678"<br/>}|{<br/>"id":1,<br/>"username":"변민준 수정",<br/>"email":"bms0615@naver.com",<br/>"createdAt":"2025-03-24 12:00:00",<br/>"updatedAt":"2025-03-24 12:30:00"<br/>}|
+|유저 생성 (회원가입)|POST|/api/users|{<br/>"name":"변민준",<br/>"email":"bms0615@naver.com",<br/>"password":"1234"<br/>}|{<br/>"id":1,<br/>"name":"변민준",<br/>"email":"bms0615@naver.com",<br/>"createdAt":"2025-03-24 12:00:00",<br/>"updatedAt":"2025-03-24 12:00:00"<br/>}|
+|유저 조회 (단건)|GET|/api/users/{id}| |{<br/>"id":1,<br/>"name":"변민준",<br/>"email":"bms0615@naver.com",<br/>"createdAt":"2025-03-24 12:00:00",<br/>"updatedAt":"2025-03-24 12:00:00"<br/>}|
+|유저 목록 조회|GET|/api/users| |[{<br/>"id":1,<br/>"name":"변민준",<br/>"email":"bms0615@naver.com",<br/>"createdAt":"2025-03-24 12:00:00",<br/>"updatedAt":"2025-03-24 12:00:00"<br/>},<br/>{<br/>"id":2,<br/>"name":"홍길동",<br/>"email":"hong@example.com",<br/>"createdAt":"2025-03-24 12:10:00",<br/>"updatedAt":"2025-03-24 12:10:00"<br/>}]|
+|유저 정보 수정|PUT|/api/users/{id}|{<br/>"name":"변민준 수정",<br/>"email":"bms0615@naver.com",<br/>"password":"5678"<br/>}|{<br/>"id":1,<br/>"name":"변민준 수정",<br/>"email":"bms0615@naver.com",<br/>"createdAt":"2025-03-24 12:00:00",<br/>"updatedAt":"2025-03-24 12:30:00"<br/>}|
 |유저 삭제|DELETE|/api/users/{id}| |{<br/>"message":"유저 삭제 성공"<br/>}|
 
 
