@@ -23,3 +23,8 @@
  
 ## 2. ERD
 ![image](https://github.com/user-attachments/assets/4b453e2d-bc50-46e2-a8d1-f064c3a097e1)
+
+## 2-1 . ERD 수정
+
+![image](https://github.com/user-attachments/assets/6ad351c1-fc84-495e-9dca-c0a6893845c8)
+
