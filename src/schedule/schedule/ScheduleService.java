@@ -13,24 +13,20 @@ import java.util.List;
 @Service
 public class ScheduleService {
     private final ScheduleRepository scheduleRepository;
+    private final UserRepository userRepository;
 
 
     public ScheduleService(ScheduleRepository scheduleRepository) {
         this.scheduleRepository = scheduleRepository;
+        this.userRepository = userRepository;
     }
 
     //일정생성
     public ScheduleResponseDto createSchedule(ScheduleRequestDto scheduleRequestDto) {
-        Schedule schedule = new Schedule (
-                scheduleRequestDto.getName(),
-                scheduleRequestDto.getPassword(),
-                scheduleRequestDto.getTodo(),
-                scheduleRequestDto.getDate()
-        );
+        User user = userRepository.findById(scheduleRequestDto.getUserId()).orElseThrow(() -> new IllegalArgumentException("유저를 찾을 수 없습니다."));
 
-        // DB에 일정 저장
+        Schedule schedule = new Schedule (user, scheduleRequestDto.getTodo(), scheduleRequestDto.getDate());
         scheduleRepository.save(schedule);
-        
         return new ScheduleResponseDto(schedule);
     }
     
@@ -42,11 +38,20 @@ public class ScheduleService {
         return new ScheduleResponseDto(schedule);
     }
 
-    public List<ScheduleResponseDto> getAllSchedules() {
+    public List<ScheduleResponseDto> getAllSchedules(String name, String updatedAt) {
         List<Schedule> schedules = scheduleRepository.findAll();
-        return schedules.stream()
-                .map(ScheduleResponseDto::new)
-                .collect(Collectors.toList());
+
+        // '작성자명(name)'으로 필터링
+        if (userId != null) {
+            schedules = schedules.stream().filter(schedule -> schedule.getName().equals(userId)).collect(Collectors.toList());
+        }
+
+        // '수정일(updatedAt)'으로 필터링
+        if (updatedAt != null && !updatedAt.isEmpty()) {
+            schedules = schedules.stream().filter(schedule -> schedule.getUpdatedAt() != null && schedule.getUpdatedAt().toString().startsWith(updatedAt)).collect(Collectors.toList());
+        }
+
+        return schedules.stream().map(ScheduleResponseDto::new).collect(Collectors.toList());
     }
 
     //일정 조회
@@ -67,8 +72,7 @@ public class ScheduleService {
 
         // 할일, 작성자명만 수정 가능
         schedule.setTodo(scheduleRequestDto.getTodo());
-        schedule.setName(scheduleRequestDto.getName());
-        schedule.setUpdated_at(LocalDateTime.now().toString());  // 수정일 업데이트
+        schedule.setUpdatedAt(LocalDateTime.now());  // 수정일 업데이트
 
         // DB에 수정된 일정 저장
         scheduleRepository.save(schedule);
